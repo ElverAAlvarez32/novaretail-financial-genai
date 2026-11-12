@@ -1,0 +1,270 @@
+metadata:
+  version: "1.1"
+  project: "NovaRetail Financial GenAI"
+  synthetic_data: true
+  default_severity: "medium"
+
+severity_levels:
+  critical:
+    action: "block"
+    description: "Impide aprobar o utilizar el conjunto de datos."
+
+  high:
+    action: "review_and_fix"
+    description: "Requiere corrección antes del análisis financiero."
+
+  medium:
+    action: "review"
+    description: "Requiere revisión y tratamiento documentado."
+
+  low:
+    action: "log"
+    description: "Se registra para seguimiento."
+
+general_rules:
+  required_tables:
+    - "00_Control"
+    - "01_Parametros"
+    - "02_Productos"
+    - "03_Clientes"
+    - "04_Pedidos"
+    - "05_Inventario"
+    - "06_Devoluciones"
+    - "07_Marketing"
+    - "08_Estado_Resultados"
+    - "09_Balance_General"
+    - "10_Flujo_Efectivo"
+    - "11_Presupuesto"
+
+  allowed_currency:
+    - "COP"
+
+  allowed_reporting_units:
+    - "thousands"
+
+  expected_start_date: "2023-01-01"
+  expected_end_date: "2025-12-31"
+  expected_months: 36
+
+identifier_rules:
+  producto_id:
+    unique: true
+    nullable: false
+    severity: "critical"
+
+  cliente_id:
+    unique: true
+    nullable: false
+    severity: "critical"
+
+  pedido_id:
+    unique: true
+    nullable: false
+    severity: "critical"
+
+  devolucion_id:
+    unique: true
+    nullable: false
+    severity: "critical"
+
+date_rules:
+  minimum_date: "2023-01-01"
+  maximum_date: "2025-12-31"
+  invalid_date_severity: "high"
+  future_date_severity: "critical"
+
+numeric_rules:
+  unidades:
+    minimum: 1
+    maximum: 100
+    severity: "high"
+
+  precio_unitario:
+    minimum: 0
+    maximum: 10000000
+    severity: "high"
+
+  costo_unitario:
+    minimum: 0
+    maximum: 10000000
+    severity: "high"
+
+  descuento_rate:
+    minimum: 0.0
+    maximum: 0.25
+    severity: "high"
+
+  margen_objetivo:
+    minimum: 0.20
+    maximum: 0.48
+    severity: "high"
+
+  dias_entrega:
+    minimum: 0
+    maximum: 30
+    severity: "medium"
+
+  valor_monetario:
+    minimum: 0
+    severity: "high"
+
+conditional_rules:
+  cancelled_order_delivery_days:
+    sheet: "04_Pedidos"
+    condition_column: "estado_pedido"
+    condition_value: "Cancelado"
+    target_column: "dias_entrega"
+    expected_value: 0
+    severity: "high"
+
+  completed_order_delivery_days:
+    sheet: "04_Pedidos"
+    condition_column: "estado_pedido"
+    condition_values:
+      - "Entregado"
+      - "Devuelto"
+    target_column: "dias_entrega"
+    minimum: 1
+    maximum: 30
+    severity: "high"
+
+relationship_rules:
+  pedidos_producto:
+    child_table: "04_Pedidos"
+    child_key: "producto_id"
+    parent_table: "02_Productos"
+    parent_key: "producto_id"
+    severity: "critical"
+
+  pedidos_cliente:
+    child_table: "04_Pedidos"
+    child_key: "cliente_id"
+    parent_table: "03_Clientes"
+    parent_key: "cliente_id"
+    severity: "critical"
+
+  devoluciones_pedido:
+    child_table: "06_Devoluciones"
+    child_key: "pedido_id"
+    parent_table: "04_Pedidos"
+    parent_key: "pedido_id"
+    severity: "critical"
+
+  inventario_producto:
+    child_table: "05_Inventario"
+    child_key: "producto_id"
+    parent_table: "02_Productos"
+    parent_key: "producto_id"
+    severity: "critical"
+
+accounting_rules:
+  balance_equation:
+    formula: "total_activos - total_pasivo_patrimonio"
+    expected_value: 0
+    tolerance: 1
+    severity: "critical"
+
+  net_revenue:
+    formula: >
+      ingresos_brutos
+      - descuentos
+      - devoluciones_ventas
+    tolerance: 1
+    severity: "critical"
+
+  gross_profit:
+    formula: >
+      ingresos_netos
+      - costo_mercancia_vendida
+    tolerance: 1
+    severity: "critical"
+
+  operating_profit:
+    formula: >
+      utilidad_bruta
+      - total_gastos_operacionales
+    tolerance: 1
+    severity: "critical"
+
+  profit_before_tax:
+    formula: >
+      utilidad_operacional
+      + ingresos_no_operacionales
+      - gastos_financieros
+    tolerance: 1
+    severity: "critical"
+
+  net_profit:
+    formula: >
+      utilidad_antes_impuestos
+      - impuesto
+    tolerance: 1
+    severity: "critical"
+
+  cash_reconciliation:
+    formula: >
+      efectivo_inicial
+      + variacion_neta_efectivo
+      - efectivo_final
+    expected_value: 0
+    tolerance: 1
+    severity: "critical"
+
+  inventory_reconciliation:
+    formula: >
+      inventario_inicial_unidades
+      + compras_unidades
+      + devoluciones_unidades
+      + ajustes_unidades
+      - ventas_unidades
+      - inventario_final_unidades
+    expected_value: 0
+    tolerance: 0
+    severity: "critical"
+
+missing_value_rules:
+  critical_fields:
+    allowed_percentage: 0.0
+    severity: "critical"
+
+  optional_fields:
+    allowed_percentage: 5.0
+    severity: "medium"
+
+duplicate_rules:
+  primary_keys:
+    allowed_count: 0
+    severity: "critical"
+
+  complete_rows:
+    allowed_percentage: 0.1
+    severity: "high"
+
+outlier_rules:
+  method: "iqr"
+  iqr_multiplier: 1.5
+  automatic_removal: false
+  severity: "medium"
+  required_action: "flag_for_review"
+
+cleaning_rules:
+  preserve_original_file: true
+  create_new_clean_version: true
+  create_quality_log: true
+  automatic_imputation: false
+  automatic_outlier_removal: false
+  require_reason_for_change: true
+
+quality_log:
+  required_columns:
+    - "fecha_ejecucion"
+    - "tabla"
+    - "registro"
+    - "campo"
+    - "problema"
+    - "severidad"
+    - "valor_original"
+    - "accion"
+    - "valor_resultante"
+    - "regla_aplicada"
+    - "estado_revision"

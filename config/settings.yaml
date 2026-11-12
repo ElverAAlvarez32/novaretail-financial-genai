@@ -1,0 +1,54 @@
+project:
+  name: "NovaRetail Financial GenAI"
+  version: "0.1.0"
+  owner: "ELVER ALIRIO ALVAREZ RAMIREZ"
+  environment: "development"
+  academic_use_only: true
+  synthetic_data_only: true
+
+company:
+  name: "NovaRetail Colombia S.A.S."
+  fictional_company: true
+  sector: "Comercio electrónico"
+  country: "Colombia"
+  timezone: "America/Bogota"
+
+financial:
+  currency: "COP"
+  reporting_unit: "thousands"
+  reporting_frequency: "monthly"
+  fiscal_year_start_month: 1
+
+period:
+  start_date: "2023-01-01"
+  end_date: "2025-12-31"
+  expected_months: 36
+
+paths:
+  raw_data: "data/raw"
+  clean_data: "data/clean"
+  reference_data: "data/reference"
+  sample_data: "data/samples"
+  charts: "outputs/charts"
+  reports: "outputs/reports"
+  logs: "outputs/logs"
+  evidence: "outputs/evidence"
+  audit: "outputs/audit"
+  prompts: "prompts"
+
+logging:
+  level: "INFO"
+  filename: "novaretail.log"
+  console_enabled: true
+  file_enabled: true
+
+ai:
+  enabled: false
+  human_review_required: true
+  audit_log_enabled: true
+  block_sensitive_data: true
+
+application:
+  title: "NovaRetail Financial GenAI"
+  language: "es"
+  streamlit_port: 8501

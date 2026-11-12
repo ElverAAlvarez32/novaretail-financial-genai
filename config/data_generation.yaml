@@ -1,0 +1,109 @@
+generation:
+  random_seed: 20261104
+
+period:
+  start_date: "2023-01-01"
+  end_date: "2025-12-31"
+  frequency: "monthly"
+
+company:
+  name: "NovaRetail Colombia S.A.S."
+  fictional: true
+  country: "Colombia"
+  currency: "COP"
+  reporting_unit: "thousands"
+
+volumes:
+  products: 120
+  customers: 4000
+  minimum_order_lines: 20000
+  maximum_order_lines: 25000
+  marketing_channels: 6
+
+product_catalog:
+  categories:
+    - "Tecnología"
+    - "Hogar"
+    - "Cocina"
+    - "Cuidado personal"
+    - "Oficina"
+    - "Accesorios"
+
+customer_segments:
+  values:
+    - "Nuevo"
+    - "Ocasional"
+    - "Frecuente"
+    - "Alto valor"
+
+sales:
+  base_monthly_orders: 445
+
+  annual_growth_rate:
+    2023: 0.00
+    2024: 0.10
+    2025: 0.14
+
+  seasonal_factors:
+    1: 0.82
+    2: 0.86
+    3: 0.92
+    4: 0.95
+    5: 1.00
+    6: 1.02
+    7: 0.98
+    8: 1.00
+    9: 1.05
+    10: 1.10
+    11: 1.32
+    12: 1.48
+
+  minimum_units_per_order: 1
+  maximum_units_per_order: 5
+
+pricing:
+  minimum_product_price_cop: 25000
+  maximum_product_price_cop: 2500000
+  minimum_gross_margin_rate: 0.20
+  maximum_gross_margin_rate: 0.48
+  maximum_discount_rate: 0.25
+
+operations:
+  cancellation_rate: 0.035
+  return_rate: 0.065
+  minimum_delivery_days: 1
+  maximum_delivery_days: 12
+  stockout_probability: 0.025
+
+marketing:
+  channels:
+    - "Búsqueda pagada"
+    - "Redes sociales"
+    - "Correo electrónico"
+    - "Afiliados"
+    - "Tráfico orgánico"
+    - "Tráfico directo"
+
+  minimum_monthly_investment_cop: 8000000
+  maximum_monthly_investment_cop: 70000000
+
+finance:
+  income_tax_rate: 0.35
+  annual_depreciation_rate: 0.10
+  annual_debt_interest_rate: 0.14
+  minimum_cash_balance_cop: 150000000
+  initial_equity_cop: 2500000000
+
+quality_cases:
+  enabled: true
+  missing_values: 18
+  duplicate_orders: 8
+  inconsistent_categories: 10
+  invalid_dates: 4
+  extreme_values: 5
+  invalid_quantities: 4
+
+output:
+  raw_workbook: "NovaRetail_Datos_RAW_v01.xlsx"
+  clean_workbook: "NovaRetail_Datos_CLEAN_v01.xlsx"
+  quality_log: "NovaRetail_Log_Calidad_v01.csv"

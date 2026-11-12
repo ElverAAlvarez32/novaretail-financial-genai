@@ -1,0 +1,213 @@
+metadata:
+  company: "NovaRetail Colombia S.A.S."
+  synthetic_data: true
+  currency: "COP"
+  reporting_unit: "thousands"
+  reporting_frequency: "monthly"
+
+income_statement:
+  revenue:
+    gross_revenue:
+      label: "Ingresos brutos"
+      nature: "credit"
+    sales_discounts:
+      label: "Descuentos comerciales"
+      nature: "debit"
+    sales_returns:
+      label: "Devoluciones en ventas"
+      nature: "debit"
+    net_revenue:
+      label: "Ingresos netos"
+      calculated: true
+
+  cost_of_sales:
+    cost_of_goods_sold:
+      label: "Costo de mercancía vendida"
+      nature: "debit"
+
+  gross_profit:
+    label: "Utilidad bruta"
+    calculated: true
+
+  operating_expenses:
+    marketing_expense:
+      label: "Gastos de marketing"
+      nature: "debit"
+    logistics_expense:
+      label: "Gastos de logística"
+      nature: "debit"
+    platform_expense:
+      label: "Gastos de plataforma"
+      nature: "debit"
+    personnel_expense:
+      label: "Gastos de personal"
+      nature: "debit"
+    administrative_expense:
+      label: "Gastos administrativos"
+      nature: "debit"
+    depreciation_expense:
+      label: "Gasto por depreciación"
+      nature: "debit"
+    total_operating_expenses:
+      label: "Total gastos operacionales"
+      calculated: true
+
+  operating_profit:
+    label: "Utilidad operacional"
+    calculated: true
+
+  non_operating:
+    non_operating_income:
+      label: "Ingresos no operacionales"
+      nature: "credit"
+    financial_expense:
+      label: "Gastos financieros"
+      nature: "debit"
+
+  profit_before_tax:
+    label: "Utilidad antes de impuestos"
+    calculated: true
+
+  income_tax:
+    label: "Impuesto a las ganancias"
+    nature: "debit"
+
+  net_profit:
+    label: "Utilidad neta"
+    calculated: true
+
+balance_sheet:
+  current_assets:
+    cash:
+      label: "Efectivo y equivalentes"
+      nature: "debit"
+    accounts_receivable:
+      label: "Cuentas por cobrar"
+      nature: "debit"
+    inventory:
+      label: "Inventarios"
+      nature: "debit"
+    other_current_assets:
+      label: "Otros activos corrientes"
+      nature: "debit"
+    total_current_assets:
+      label: "Total activo corriente"
+      calculated: true
+
+  non_current_assets:
+    property_plant_equipment_gross:
+      label: "Propiedad, planta y equipo bruto"
+      nature: "debit"
+    accumulated_depreciation:
+      label: "Depreciación acumulada"
+      nature: "credit"
+    other_non_current_assets:
+      label: "Otros activos no corrientes"
+      nature: "debit"
+    total_non_current_assets:
+      label: "Total activo no corriente"
+      calculated: true
+
+  total_assets:
+    label: "Total activos"
+    calculated: true
+
+  current_liabilities:
+    accounts_payable:
+      label: "Proveedores"
+      nature: "credit"
+    short_term_debt:
+      label: "Obligaciones financieras de corto plazo"
+      nature: "credit"
+    taxes_payable:
+      label: "Impuestos por pagar"
+      nature: "credit"
+    other_current_liabilities:
+      label: "Otros pasivos corrientes"
+      nature: "credit"
+    total_current_liabilities:
+      label: "Total pasivo corriente"
+      calculated: true
+
+  non_current_liabilities:
+    long_term_debt:
+      label: "Obligaciones financieras de largo plazo"
+      nature: "credit"
+    other_non_current_liabilities:
+      label: "Otros pasivos no corrientes"
+      nature: "credit"
+    total_non_current_liabilities:
+      label: "Total pasivo no corriente"
+      calculated: true
+
+  total_liabilities:
+    label: "Total pasivos"
+    calculated: true
+
+  equity:
+    share_capital:
+      label: "Capital social"
+      nature: "credit"
+    retained_earnings:
+      label: "Utilidades retenidas"
+      nature: "credit"
+    current_period_result:
+      label: "Resultado del periodo"
+      nature: "credit"
+    total_equity:
+      label: "Total patrimonio"
+      calculated: true
+
+  total_liabilities_and_equity:
+    label: "Total pasivo y patrimonio"
+    calculated: true
+
+cash_flow:
+  operating:
+    net_profit:
+      label: "Utilidad neta"
+    depreciation:
+      label: "Depreciación"
+    accounts_receivable_change:
+      label: "Variación de cuentas por cobrar"
+    inventory_change:
+      label: "Variación de inventarios"
+    accounts_payable_change:
+      label: "Variación de proveedores"
+    other_operating_adjustments:
+      label: "Otros ajustes operativos"
+    operating_cash_flow:
+      label: "Flujo de efectivo de operación"
+      calculated: true
+
+  investing:
+    fixed_asset_purchases:
+      label: "Compras de activos fijos"
+    asset_sales:
+      label: "Venta de activos"
+    investing_cash_flow:
+      label: "Flujo de efectivo de inversión"
+      calculated: true
+
+  financing:
+    new_debt:
+      label: "Nuevos préstamos"
+    debt_principal_payments:
+      label: "Pago de capital de deuda"
+    capital_contributions:
+      label: "Aportes de capital"
+    dividends:
+      label: "Dividendos"
+    financing_cash_flow:
+      label: "Flujo de efectivo de financiación"
+      calculated: true
+
+  reconciliation:
+    net_cash_change:
+      label: "Variación neta del efectivo"
+      calculated: true
+    opening_cash:
+      label: "Efectivo inicial"
+    closing_cash:
+      label: "Efectivo final"
+      calculated: true

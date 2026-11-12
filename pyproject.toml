@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=70"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "novaretail-financial-genai"
+version = "0.1.0"
+description = "Prototipo académico de análisis financiero y operativo con IA generativa para una empresa ficticia de comercio electrónico."
+readme = "README.md"
+requires-python = ">=3.11,<3.12"
+authors = [
+    { name = "ELVER ALIRIO ALVAREZ RAMIREZ" }
+]
+keywords = [
+    "financial-analysis",
+    "generative-ai",
+    "ecommerce",
+    "synthetic-data",
+    "streamlit",
+    "python"
+]
+
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = [
+    "-ra",
+    "--strict-markers",
+    "--strict-config"
+]
+
+
+[tool.coverage.run]
+source = ["src/novaretail"]
+branch = true
+
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
+fail_under = 70
+exclude_lines = [
+    "pragma: no cover",
+    "if __name__ == .__main__.:",
+    "raise NotImplementedError"
+]
