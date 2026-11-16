@@ -15,7 +15,7 @@ from novaretail.config import (
     load_settings,
 )
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 __author__ = "ELVER ALIRIO ALVAREZ RAMIREZ"
 __project_name__ = "NovaRetail Financial GenAI"
 
