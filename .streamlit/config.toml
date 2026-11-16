@@ -26,8 +26,8 @@ chartCategoricalColors = [
 ]
 
 [server]
-runOnSave = true
-headless = false
+headless = true
+runOnSave = false
 
 [browser]
 gatherUsageStats = false
