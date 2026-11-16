@@ -1,261 +1,103 @@
 # NovaRetail Financial GenAI
 
-Prototipo académico de análisis financiero y operativo con inteligencia artificial generativa para una empresa ficticia de comercio electrónico.
+Sistema académico reproducible para generar, exportar, validar y visualizar datos financieros y operativos completamente sintéticos de una empresa ficticia de comercio electrónico.
 
 ## Estado del proyecto
 
-**Versión:** 0.1.0  
-**Fase actual:** Configuración inicial  
-**Estado:** En desarrollo  
-**Responsable:** ELVER ALIRIO ALVAREZ RAMIREZ  
-**Uso:** Exclusivamente académico  
+- **Versión:** 0.2.0
+- **Estado:** Funcional, probado, depurado y publicado
+- **Responsable:** ELVER ALIRIO ALVAREZ RAMIREZ
+- **Uso:** Exclusivamente académico
+- **Empresa simulada:** NovaRetail Colombia S.A.S.
+- **Periodo:** Enero de 2023 a diciembre de 2025
+- **Moneda:** Pesos colombianos
+- **Pruebas verificadas:** 380 aprobadas
+- **Advertencias controladas:** 1
+- **Aplicación pública:** https://novaretail-financial-genai.streamlit.app
+- **Release:** https://github.com/ElverAAlvarez32/novaretail-financial-genai/releases/tag/v0.2.0
 
 ## Advertencia sobre los datos
 
-Todos los datos que se utilizarán en este proyecto serán sintéticos.
+Todos los productos, clientes, pedidos, devoluciones, campañas, presupuestos, estados financieros y resultados son sintéticos.
 
-La empresa NovaRetail Colombia S.A.S., sus clientes, productos, proveedores, transacciones, estados financieros, presupuestos, campañas y resultados son completamente ficticios.
+NovaRetail Colombia S.A.S. es una empresa ficticia. Ningún registro corresponde a una persona u organización real.
 
-Ningún dato corresponde a una empresa o persona real.
-
-Los resultados obtenidos no deben presentarse como hechos financieros observados ni utilizarse para tomar decisiones reales.
+Los resultados no deben utilizarse para decisiones empresariales, financieras, crediticias, contables, laborales o de inversión.
 
 ## Contexto académico
 
-El proyecto se desarrolla para el caso práctico de la asignatura:
+El proyecto se desarrolló para el caso práctico de la asignatura **Aplicaciones de Negocio y Gestión de Riesgos**.
 
-**Aplicaciones de Negocio y Gestión de Riesgos**
+La versión actual integra:
 
-El prototipo busca integrar:
+- Generación reproducible de datos sintéticos.
+- Estados financieros mensuales.
+- Presupuesto y ejecución.
+- Datos operativos de comercio electrónico.
+- Exportación profesional a Excel.
+- Validación estructural.
+- Validación de calidad.
+- Validación contable.
+- Validación relacional.
+- Pruebas automatizadas.
+- Tablero ejecutivo con Streamlit y Plotly.
+- Despliegue público mediante Streamlit Community Cloud.
+- Control de versiones y lanzamientos en GitHub.
 
-- Análisis exploratorio de datos, EDA.
-- Análisis financiero.
-- Indicadores de comercio electrónico.
-- Inteligencia artificial generativa.
-- Prompt Engineering.
-- Simulación de escenarios.
-- Validación de resultados.
-- Gestión de riesgos.
-- Trazabilidad.
-- Supervisión humana.
+## Alcance funcional implementado
 
-## Problema preliminar
+### Generación de datos
 
-El análisis financiero requiere reunir información de diferentes fuentes, validar su consistencia, calcular indicadores, comparar periodos y explicar los hallazgos a diferentes audiencias.
+El sistema genera:
 
-Cuando estas actividades se realizan de manera manual pueden presentarse:
+- 120 productos.
+- 4.000 clientes.
+- 18.072 pedidos.
+- 23.706 líneas de pedido.
+- 3.712 registros de inventario.
+- 1.511 devoluciones.
+- 216 registros de marketing.
+- 36 estados de resultados.
+- 36 balances generales.
+- 36 flujos de efectivo.
+- 288 registros presupuestales.
 
-- Errores en fórmulas.
-- Comparaciones entre periodos incompatibles.
-- Confusión entre monedas o unidades.
-- Omisión de datos relevantes.
-- Interpretaciones sin evidencia suficiente.
-- Retrasos en la preparación de informes.
-- Dificultad para convertir cifras en explicaciones claras.
+La generación utiliza una semilla configurada para mantener la reproducibilidad bajo las mismas versiones, parámetros y dependencias.
 
-La formulación definitiva del problema será aprobada después de generar y analizar el conjunto de datos sintético.
+### Estados financieros
 
-## Solución preliminar
+El proyecto construye:
 
-El proyecto propone construir un asistente que permita:
+- Estado de resultados.
+- Balance general.
+- Flujo de efectivo por método indirecto.
+- Presupuesto frente a ejecución.
 
-1. Cargar datos financieros y operativos.
-2. Validar estructura, tipos y relaciones.
-3. Detectar problemas de calidad.
-4. Limpiar los datos mediante reglas documentadas.
-5. Calcular indicadores financieros.
-6. Calcular indicadores de comercio electrónico.
-7. Ejecutar análisis horizontal y vertical.
-8. Crear visualizaciones.
-9. Simular escenarios financieros.
-10. Generar interpretaciones mediante IA generativa.
-11. Verificar las respuestas generadas.
-12. Solicitar revisión humana.
-13. Exportar informes y evidencias.
-
-## Principio de funcionamiento
-
-Los cálculos financieros se realizarán mediante código reproducible.
-
-La inteligencia artificial generativa se utilizará para:
-
-- Explicar resultados.
-- Resumir hallazgos.
-- Comparar periodos.
-- Formular preguntas de revisión.
-- Generar recomendaciones condicionadas.
-- Adaptar el lenguaje a una audiencia técnica o ejecutiva.
-
-La inteligencia artificial generativa no será la fuente principal de los cálculos.
-
-## Flujo previsto
+Las principales conciliaciones son:
 
 ```text
-Parámetros documentados
-        ↓
-Generación de datos sintéticos
-        ↓
-Archivo RAW
-        ↓
-Validación de calidad
-        ↓
-Limpieza documentada
-        ↓
-Archivo CLEAN
-        ↓
-EDA y cálculos financieros
-        ↓
-Visualizaciones y escenarios
-        ↓
-Interpretación con IA generativa
-        ↓
-Verificación de la respuesta
-        ↓
-Revisión humana
-        ↓
-Informe final
+Ingresos netos =
+Ingresos brutos
+- Descuentos
+- Devoluciones
 ```
 
-## Periodo de análisis
-
-El conjunto de datos cubrirá:
-
-- **Fecha inicial:** enero de 2023.
-- **Fecha final:** diciembre de 2025.
-- **Frecuencia financiera:** mensual.
-- **Número de periodos:** 36.
-- **Moneda:** pesos colombianos, COP.
-- **Unidad financiera:** miles de pesos colombianos.
-
-## Volumen previsto
-
-Los siguientes valores corresponden al diseño del conjunto de datos y podrán ajustarse antes de ejecutar el generador:
-
-| Componente | Volumen previsto |
-|---|---:|
-| Productos ficticios | 120 |
-| Clientes ficticios | 4.000 |
-| Líneas de pedido | Entre 20.000 y 25.000 |
-| Periodos financieros | 36 |
-| Canales de marketing | 6 |
-| Registros mensuales de inventario | 4.320 |
-
-## Indicadores financieros previstos
-
-### Liquidez
-
-- Razón corriente.
-- Prueba ácida.
-- Capital de trabajo.
-
-### Endeudamiento
-
-- Endeudamiento total.
-- Deuda sobre patrimonio.
-- Cobertura de intereses.
-
-### Rentabilidad
-
-- Margen bruto.
-- Margen operacional.
-- Margen neto.
-- Rentabilidad sobre activos, ROA.
-- Rentabilidad sobre patrimonio, ROE.
-
-### Eficiencia
-
-- Rotación de inventarios.
-- Días de inventario.
-- Rotación de cartera.
-- Periodo promedio de cobro.
-- Rotación de activos.
-
-## Indicadores de comercio electrónico previstos
-
-- Ventas netas.
-- Número de pedidos.
-- Unidades vendidas.
-- Ticket promedio.
-- Margen por pedido.
-- Tasa de devolución.
-- Tasa de cancelación.
-- Tiempo promedio de entrega.
-- Clientes recurrentes.
-- Ventas por canal.
-- Ventas por categoría.
-- Tasa de conversión.
-- Costo de adquisición.
-- Retorno publicitario.
-- Quiebres de inventario.
-
-## Arquitectura del proyecto
-
 ```text
-novaretail_financial_genai/
-│
-├── config/       Configuración y reglas externas
-├── data/         Datos RAW, CLEAN, referencias y muestras
-├── docs/         Documentación y trazabilidad
-├── notebooks/    Análisis exploratorio inicial
-├── outputs/      Gráficos, informes, logs y evidencias
-├── prompts/      Biblioteca versionada de prompts
-├── scripts/      Puntos de entrada para ejecutar procesos
-├── src/          Código fuente modular
-└── tests/        Pruebas automáticas
+Utilidad bruta =
+Ingresos netos
+- Costo de mercancía vendida
 ```
 
-## Tecnologías previstas
-
-- Python.
-- Visual Studio Code.
-- pandas.
-- NumPy.
-- openpyxl.
-- PyYAML.
-- Pydantic.
-- python-dotenv.
-- Streamlit.
-- Plotly.
-- Matplotlib.
-- pytest.
-- Git.
-
-El proveedor y el modelo de IA generativa se definirán después de confirmar las herramientas autorizadas.
-
-## Calidad y reproducibilidad
-
-El proyecto utilizará una semilla fija:
-
 ```text
-20261104
-```
-
-Esta semilla permitirá reproducir el mismo conjunto de datos bajo la misma versión del código, los mismos parámetros y las mismas dependencias.
-
-Las validaciones incluirán:
-
-- Unicidad de identificadores.
-- Integridad entre tablas.
-- Tipos de datos.
-- Fechas válidas.
-- Moneda y unidad.
-- Valores faltantes.
-- Registros duplicados.
-- Valores extremos.
-- Consistencia del inventario.
-- Consistencia del flujo de efectivo.
-- Igualdad contable.
-- Manejo de divisiones por cero.
-
-## Controles contables previstos
-
-```text
-Activo total = Pasivo total + Patrimonio
+Activo total =
+Pasivo total
++ Patrimonio
 ```
 
 ```text
 Efectivo final =
-Efectivo inicial + Variación neta del efectivo
+Efectivo inicial
++ Variación neta del efectivo
 ```
 
 ```text
@@ -267,159 +109,282 @@ Inventario inicial
 - Ventas
 ```
 
+### Libro Excel
+
+El resultado principal es:
+
 ```text
-Ingresos netos =
-Ingresos brutos
-- Descuentos
-- Devoluciones
+data/raw/NovaRetail_Datos_RAW_v01.xlsx
 ```
 
-## Seguridad y privacidad
+El libro contiene 12 hojas:
 
-El proyecto aplicará estas reglas:
+1. `00_Control`
+2. `01_Parametros`
+3. `02_Productos`
+4. `03_Clientes`
+5. `04_Pedidos`
+6. `05_Inventario`
+7. `06_Devoluciones`
+8. `07_Marketing`
+9. `08_Estado_Resultados`
+10. `09_Balance_General`
+11. `10_Flujo_Efectivo`
+12. `11_Presupuesto`
 
-- No utilizar datos personales reales.
-- No utilizar información empresarial confidencial.
-- No guardar credenciales dentro del código.
-- Utilizar variables de entorno cuando sea necesario.
-- Excluir el archivo `.env` del control de versiones.
-- No enviar información sensible a servicios no autorizados.
-- Registrar las interacciones relevantes con IA.
-- Mantener revisión humana sobre las salidas.
-- Separar datos originales, datos procesados y resultados.
+El archivo incorpora:
 
-## Trazabilidad de IA
+- Tablas estructuradas de Excel.
+- Encabezados formateados.
+- Filtros.
+- Paneles inmovilizados.
+- Cuadrículas ocultas.
+- Formatos monetarios y porcentuales.
+- Metadatos documentales.
+- Advertencias sobre el carácter sintético de los datos.
 
-Cada interacción relevante deberá registrar:
+## Validaciones
 
-- Fecha.
-- Caso de prueba.
-- Archivo de entrada.
-- Herramienta y modelo.
-- Versión del prompt.
-- Contexto suministrado.
-- Respuesta original.
-- Evaluación.
-- Corrección aplicada.
-- Decisión humana.
-- Versión final aprobada.
+El libro se revisa mediante cuatro capas.
 
-## Reglas de desarrollo
+### Validación estructural
 
-El código deberá aplicar:
+Comprueba hojas, columnas, claves primarias, valores obligatorios, periodos financieros e indicadores de datos sintéticos.
 
-- PEP 8.
-- Type hints.
-- Docstrings.
-- Funciones pequeñas y reutilizables.
-- Excepciones específicas.
-- Logging.
-- Configuración externa.
-- Pruebas automáticas.
-- Control de versiones.
-- Separación entre generación, validación, limpieza, análisis, IA e interfaz.
+### Validación de calidad
 
-## Instalación
+Comprueba valores nulos, duplicados, fechas, tipos, rangos permitidos y valores atípicos mediante IQR. Los valores atípicos son alertas de revisión y no errores automáticos.
 
-La instalación todavía no ha sido ejecutada.
+### Validación contable
 
-Los comandos definitivos se agregarán después de validar:
+Comprueba 15 reglas, incluyendo ingresos netos, utilidades, ecuación del balance, efectivo e inventario. La diferencia máxima verificada es cero.
 
-- Versión de Python.
-- Sistema operativo.
-- Intérprete seleccionado.
-- Entorno virtual.
-- Compatibilidad de dependencias.
+### Validación relacional
+
+Comprueba nueve relaciones entre pedidos, productos, clientes, devoluciones e inventario. El resultado verificado es cero registros huérfanos y cero registros afectados.
+
+## Tablero ejecutivo
+
+La aplicación pública está disponible en:
+
+https://novaretail-financial-genai.streamlit.app
+
+El tablero incluye:
+
+- Resumen ejecutivo.
+- Estado de resultados.
+- Inventario de datos.
+- Filtros por periodo.
+- Tarjetas KPI.
+- Gráficos de área, líneas, barras y dona.
+- Información emergente y tablas desplazables.
+
+## Indicadores verificados del tablero
+
+Para enero de 2023 a diciembre de 2025:
+
+- Productos: 120.
+- Clientes: 4.000.
+- Pedidos: 18.072.
+- Líneas de pedido: 23.706.
+- Devoluciones: 1.511.
+- Ingresos netos: 76.959.255.100 pesos.
+- Utilidad neta: 3.425.293.548 pesos.
+- Margen neto promedio aproximado: 4,42 %.
+- Hojas del libro: 12.
+- Registros totales: 33.740.
+
+## Arquitectura del proyecto
+
+```text
+novaretail_financial_genai/
+├── .streamlit/
+│   └── config.toml
+├── config/
+├── data/
+│   └── raw/
+│       └── NovaRetail_Datos_RAW_v01.xlsx
+├── docs/
+├── prompts/
+├── scripts/
+│   ├── generate_data.py
+│   └── validate_data.py
+├── src/
+│   └── novaretail/
+│       ├── app/
+│       ├── generation/
+│       ├── reporting/
+│       └── validation/
+├── tests/
+├── pyproject.toml
+├── requirements.txt
+└── streamlit_app.py
+```
+
+## Tecnologías utilizadas
+
+- Python 3.11 para desarrollo local.
+- pandas.
+- NumPy.
+- openpyxl.
+- PyYAML.
+- Pydantic.
+- python-dotenv.
+- Streamlit.
+- Plotly.
+- pytest.
+- Git y GitHub.
+- GitHub CLI.
+- Streamlit Community Cloud.
+- Visual Studio Code.
+- PowerShell.
+
+## Instalación local
+
+### Crear y activar el entorno virtual
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+```
+
+### Instalar dependencias
+
+```powershell
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+```
 
 ## Ejecución
 
-La ejecución todavía no está disponible.
+### Generar el libro Excel
 
-Los puntos de entrada previstos son:
+```powershell
+python scripts\generate_data.py
+```
 
-```text
-scripts/generate_data.py
-scripts/validate_data.py
-scripts/clean_data.py
-scripts/run_eda.py
-scripts/run_app.py
+### Validar el libro
+
+```powershell
+python scripts\validate_data.py
+```
+
+### Ejecutar el tablero localmente
+
+```powershell
+python -m streamlit run "src\novaretail\app\streamlit_app.py" --server.port 8501
+```
+
+### Ejecutar las pruebas del tablero
+
+```powershell
+python -m pytest tests/test_streamlit_app.py -v
+```
+
+### Ejecutar la suite completa
+
+```powershell
+python -m pytest tests -q
 ```
 
 ## Pruebas
 
-Las pruebas automáticas se implementarán progresivamente en la carpeta:
+Resultado verificado del tablero:
 
 ```text
-tests/
+23 passed in 13.19s
 ```
 
-No se afirma que el código funciona o que las pruebas fueron aprobadas hasta ejecutar y registrar las validaciones correspondientes.
+Resultado verificado de la suite completa:
 
-## Estado por componentes
+```text
+380 passed, 1 warning
+```
+
+La advertencia corresponde a una prueba que introduce deliberadamente una fecha inválida para comprobar su detección. No representa una falla funcional.
+
+## Calidad y reproducibilidad
+
+El proyecto utiliza la semilla:
+
+```text
+20261104
+```
+
+La reproducibilidad requiere la misma versión del código, parámetros YAML, semilla y dependencias compatibles.
+
+## Seguridad y privacidad
+
+- No se utilizan datos personales reales.
+- No se utiliza información empresarial confidencial.
+- No se almacenan credenciales en el código.
+- `.env` está excluido de Git.
+- El libro contiene únicamente información sintética.
+- La aplicación pública no solicita datos al usuario.
+- No se envían datos sensibles a modelos externos.
+- La aplicación no incluye autenticación individual.
+
+## Control de versiones
+
+Repositorio:
+
+https://github.com/ElverAAlvarez32/novaretail-financial-genai
+
+Versiones publicadas:
+
+- `v0.1.0`: generación, Excel y validaciones.
+- `v0.2.0`: tablero interactivo, despliegue público y 380 pruebas.
+
+Release actual:
+
+https://github.com/ElverAAlvarez32/novaretail-financial-genai/releases/tag/v0.2.0
+
+## Capacidades no implementadas
+
+Las siguientes capacidades no forman parte de `v0.2.0`:
+
+- Integración con un modelo LLM.
+- Interpretación automática mediante IA generativa.
+- Auditoría o validación de respuestas generativas.
+- Simulación independiente de escenarios financieros.
+- Proceso CLEAN separado.
+- Módulo EDA independiente.
+- Cálculo especializado de ROA, ROE, liquidez y endeudamiento.
+- Informe académico generado automáticamente.
+- Autenticación y autorización de usuarios.
+
+Estas capacidades podrán añadirse posteriormente mediante requisitos, arquitectura, código y pruebas específicos. No se conservan módulos vacíos para representar funcionalidades inexistentes.
+
+## Limitaciones
+
+- Es un caso académico, no una empresa real.
+- El tablero depende del libro Excel incluido en el repositorio.
+- El despliegue público permite acceso sin credenciales.
+- Los valores atípicos requieren interpretación humana.
+- Las cifras no deben utilizarse para decisiones reales.
+- No se ha integrado un proveedor de IA generativa.
+- No existen métricas reales de ahorro o impacto empresarial.
+
+## Estado final de v0.2.0
 
 | Componente | Estado |
 |---|---|
-| Estructura de carpetas | Creada |
-| Archivos base | Creados |
-| README | En configuración |
-| Entorno virtual | Pendiente |
-| Dependencias | Pendientes |
-| Configuración YAML | Pendiente |
-| Generador de datos | Pendiente |
-| Archivo RAW | Pendiente |
-| Validación | Pendiente |
-| Archivo CLEAN | Pendiente |
-| EDA | Pendiente |
-| Indicadores financieros | Pendientes |
-| Escenarios | Pendientes |
-| Prompts | Pendientes |
-| Integración con IA | Pendiente |
-| Interfaz Streamlit | Pendiente |
-| Informe académico | Pendiente |
-| Diapositivas | Pendientes |
-| Video | Pendiente |
+| Configuración YAML | Implementada |
+| Generación sintética | Aprobada |
+| Libro Excel | Generado |
+| Validación estructural | Aprobada |
+| Validación de calidad | Aprobada |
+| Validación contable | Aprobada |
+| Validación relacional | Aprobada |
+| Tablero Streamlit | Implementado |
+| Despliegue público | Activo |
+| Pruebas automáticas | 380 aprobadas |
+| Integración con LLM | No implementada |
+| Escenarios independientes | No implementados |
+| Proceso CLEAN independiente | No implementado |
 
-## Limitaciones actuales
+## Conclusión
 
-- No se han generado datos.
-- No se han instalado dependencias.
-- No se ha ejecutado código.
-- No se han calculado indicadores.
-- No se ha conectado un modelo de IA.
-- No existen resultados del prototipo.
-- No existen métricas reales de ahorro, precisión o mejora.
-- La formulación definitiva del problema continúa pendiente.
+NovaRetail Financial GenAI `v0.2.0` ofrece un flujo reproducible para generar, exportar, validar, probar y visualizar datos financieros y operativos sintéticos.
 
-## Documentación del proyecto
-
-La carpeta `docs/` contendrá:
-
-- Arquitectura.
-- Diccionario de datos.
-- Reglas de calidad.
-- Matriz de riesgos.
-- Biblioteca de prompts.
-- Registro de cambios.
-
-## Control de cambios
-
-Los cambios relevantes deberán registrarse en:
-
-```text
-docs/changelog.md
-```
-
-Cada registro incluirá:
-
-- Fecha.
-- Versión.
-- Cambio.
-- Motivo.
-- Archivos afectados.
-- Validación realizada.
-- Resultado obtenido.
-- Próximo paso.
-
-## Próximo paso
-
-Configurar los archivos fundamentales del proyecto antes de crear el entorno virtual e instalar dependencias.
+El núcleo funcional está probado y publicado. Las capacidades no implementadas se declaran expresamente para evitar atribuir al proyecto funciones que todavía no existen.
