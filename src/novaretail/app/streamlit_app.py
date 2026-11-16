@@ -8,10 +8,23 @@ from __future__ import annotations
 
 from pathlib import Path
 from typing import Any
+import sys
 
 import pandas as pd
 import plotly.express as px
 import streamlit as st
+
+
+SOURCE_DIRECTORY = (
+    Path(__file__).resolve().parents[2]
+)
+
+if str(SOURCE_DIRECTORY) not in sys.path:
+    sys.path.insert(
+        0,
+        str(SOURCE_DIRECTORY),
+    )
+
 
 from novaretail.app.dashboard_theme import (
     CHART_COLORS,
