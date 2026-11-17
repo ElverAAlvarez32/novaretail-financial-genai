@@ -377,26 +377,6 @@ def inject_global_css() -> None:
             line-height: 1.4;
         }
 
-        .nr-warning-card {
-            padding: 0.9rem 1rem;
-            border: 1px solid rgba(245, 158, 11, 0.30);
-            border-radius: 0.85rem;
-            background: rgba(245, 158, 11, 0.10);
-        }
-
-        .nr-warning-title {
-            color: #FDE68A;
-            font-weight: 750;
-            font-size: 0.9rem;
-        }
-
-        .nr-warning-text {
-            margin-top: 0.2rem;
-            color: #FCD34D;
-            font-size: 0.78rem;
-            line-height: 1.4;
-        }
-
         [data-testid="stMetric"] {
             padding: 1rem;
             border: 1px solid var(--nr-border);
@@ -658,31 +638,6 @@ def render_status_card(
                 ✓ {escape(title)}
             </div>
             <div class="nr-status-text">
-                {escape(text)}
-            </div>
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
-
-
-def render_warning_card(
-    title: str,
-    text: str,
-) -> None:
-    """Presenta una advertencia visual.
-
-    Args:
-        title: Título de la advertencia.
-        text: Descripción de la advertencia.
-    """
-    st.markdown(
-        f"""
-        <div class="nr-warning-card">
-            <div class="nr-warning-title">
-                ⚠ {escape(title)}
-            </div>
-            <div class="nr-warning-text">
                 {escape(text)}
             </div>
         </div>

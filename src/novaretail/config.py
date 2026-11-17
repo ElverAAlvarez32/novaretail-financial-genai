@@ -7,13 +7,11 @@ del directorio desde el cual se ejecuten los scripts.
 
 from __future__ import annotations
 
-import os
 from functools import lru_cache
 from pathlib import Path
 from typing import Any
 
 import yaml
-from dotenv import load_dotenv
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
@@ -188,28 +186,6 @@ def load_quality_rules() -> dict[str, Any]:
         "quality_rules.yaml",
     )
     return configuration
-
-
-def load_environment() -> None:
-    """Carga las variables locales del archivo .env cuando exista."""
-    load_dotenv(PROJECT_ROOT / ".env")
-
-
-def get_environment_variable(
-    variable_name: str,
-    default: str | None = None,
-) -> str | None:
-    """Obtiene una variable de entorno.
-
-    Args:
-        variable_name: Nombre de la variable.
-        default: Valor utilizado cuando la variable no existe.
-
-    Returns:
-        Valor de la variable o el valor predeterminado.
-    """
-    load_environment()
-    return os.getenv(variable_name, default)
 
 
 def resolve_project_path(relative_path: str) -> Path:
